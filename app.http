@@ -1,0 +1,207 @@
+###
+GET http://localhost:8000/
+
+###
+GET http://localhost:8000/api/user
+
+###
+GET http://localhost:8000/api/user/1
+
+###
+POST http://localhost:8000/api/user
+Content-Type: application/json
+
+{
+    "name": "Denis",
+    "contact_phone": "073534567",
+    "phone_verified": true,
+    "email": "denis@gmail.com",
+    "email_verified": false,
+    "confirmation_code": 3456,
+    "password": "jhgh"
+}
+
+###
+PUT http://localhost:8000/api/user/1
+Content-Type: application/json
+
+{
+    "name": "John Doe"
+}
+
+###
+DELETE http://localhost:8000/api/user/3
+
+### states API
+GET http://localhost:8000/api/state
+
+###
+GET http://localhost:8000/api/state/1
+
+###
+POST http://localhost:8000/api/state
+Content-Type: application/json
+
+{
+    "name": "Chicago",
+    "code": "CH"
+}
+
+###
+PUT http://localhost:8000/api/state/1
+Content-Type: application/json
+
+{
+    "code" : "NY"
+}
+
+###
+DELETE http://localhost:8000/api/state/5
+
+### cities API
+
+GET http://localhost:8000/api/city
+
+###
+GET http://localhost:8000/api/city/1
+
+###
+POST http://localhost:8000/api/city
+Content-Type: application/json
+
+{
+    "name": "Nairobi",
+    "state_id": 1
+}
+
+###
+PUT http://localhost:8000/api/city/4
+Content-Type: application/json
+
+{
+    "name": "Mombasa raha"
+}
+
+###
+DELETE http://localhost:8000/api/city/3
+
+### Address API
+
+GET http://localhost:8000/api/address
+
+###
+GET http://localhost:8000/api/address/5
+
+###
+POST http://localhost:8000/api/address
+Content-Type: application/json
+
+{
+   "street_address_1": "1234, 5th Avenue, New York",
+  "street_address_2": "1234, 5th Avenue, New York",
+  "zip_code": "75674df",
+  "delivery_instructions": "Deliver to the car",
+  "user_id": 2,
+  "city_id": 2
+}
+
+###
+PUT http://localhost:8000/api/address/5
+Content-Type: application/json
+
+{
+    "address": "1235, 6th Avenue, Arkansas"
+}
+
+###
+DELETE http://localhost:8000/api/address/13
+
+### Restaurant API
+
+GET http://localhost:8000/api/restaurant
+
+###
+GET http://localhost:8000/api/restaurant/8
+
+###
+POST http://localhost:8000/api/restaurant
+Content-Type: application/json
+
+{
+   "name":"Okra Hotel",
+   "street_address":"1234, 5th Avenue, Arkansas",
+   "zip_code":"87094df",
+   "state":"Arkansas",
+   "city_id":2
+}
+
+###
+PUT http://localhost:8000/api/restaurant/8
+Content-Type: application/json
+
+{
+    "name": "KFC"
+}
+
+###
+DELETE http://localhost:8000/api/restaurant/7
+
+### Restaurant_owner API
+GET http://localhost:8000/api/restaurant_owner
+
+###
+GET http://localhost:8000/api/restaurant_owner/1
+
+###
+POST http://localhost:8000/api/restaurant_owner
+Content-Type: application/json
+
+{
+  "restaurant_id": 6,
+  "owner_id": 2
+}
+
+###
+PUT http://localhost:8000/api/restaurant_owner/2
+Content-Type: application/json
+
+{
+    "restaurant_id": 6
+}
+
+###
+DELETE http://localhost:8000/api/restaurant_owner/1
+
+
+### Orders API
+
+GET http://localhost:8000/api/orders
+
+###
+GET http://localhost:8000/api/orders/1
+
+###
+POST http://localhost:8000/api/orders
+Content-Type: application/json
+
+{
+ "restaurant_id": 6,
+ "estimated_delivery_time": "2021-09-09 12:00:00",
+ "actual_delivery_time": "2021-09-09 12:00:00",
+ "user_id": 2,
+ "driver_id": 1,
+ "price": 2000,
+ "discount": 200,
+ "final_price": 1800,
+}
+
+###
+PUT http://localhost:8000/api/orders/1
+Content-Type: application/json
+
+{
+    "order_status": "delivered"
+}
+
+###
+DELETE http://localhost:8000/api/orders/1
