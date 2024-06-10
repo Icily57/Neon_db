@@ -314,8 +314,8 @@ export type TSOrders = typeof ordersTable.$inferSelect;
 export type TICategory = typeof categoryTable.$inferInsert;
 export type TSCategory = typeof categoryTable.$inferSelect;
 
-export type TIMenuItems = typeof menuItemsTable.$inferInsert;
-export type TSMenuItems = typeof menuItemsTable.$inferSelect;
+export type TIMenusItems = typeof menuItemsTable.$inferInsert;
+export type TSMenusItems = typeof menuItemsTable.$inferSelect;
 
 export type TIDrivers = typeof driversTable.$inferInsert;
 export type TSDrivers = typeof driversTable.$inferSelect;

@@ -4,13 +4,11 @@ import { eq } from "drizzle-orm";
 import { restaurantTable, TSRestaurant, TIRestaurant } from "../drizzle/schema";
 
 export const getAllRestaurantsService = async ():Promise<TSRestaurant[] | null>=> {
-    return await db.query.restaurantTable.findMany();
+    return await db.select().from(restaurantTable);
 }
 
-export const getRestaurantByIdService = async (id:number):Promise<TSRestaurant | undefined> => {
-    return await db.query.restaurantTable.findFirst({
-        where:eq(restaurantTable.id, id)
-    });
+export const getRestaurantByIdService = async (id:TSRestaurant["id"]):Promise<TSRestaurant[]> => {
+    return await db.select().from(restaurantTable).where(eq(restaurantTable.id, id));
 }
 
 export const createRestaurantService = async (restaurant:TIRestaurant) => {

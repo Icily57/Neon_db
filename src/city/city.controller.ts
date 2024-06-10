@@ -1,6 +1,6 @@
 import { Context } from 'hono';
 
-import { createCityService,  deleteCityService,  getAllCitiessService,  getCityByIdService, updateCityService } from './city.service';
+import { createCityService, deleteCityService,  getAllCitiessService,  getCityByIdService, updateCityService } from './city.service';
 
 export const getAllCities = async (c:Context) => {
     try {
@@ -43,7 +43,7 @@ export const getAllCities = async (c:Context) => {
                 if(isNaN(id)) return c.text('Invalid ID 😒', 400 )
                 const existingCity = await getCityByIdService(id);
                 if(existingCity == undefined) return c.text('City not found 😒', 404)    
-                let updateCity = await updateCityService(id, city);
+                let updateCity = await updateCityService(id,city)
                 if(!updateCity) {
                     return c.json({message: 'City not updated'})
                 }
@@ -53,18 +53,15 @@ export const getAllCities = async (c:Context) => {
             }
         }
 
-        // export const deleteCity = async (c:Context) => {
-        //     try {
-        //         const id = Number(c.req.param("id"))
-        //         if(isNaN(id)) return c.text('Invalid ID 😒', 400 )
-        //         const category = await getCityByIdService(id);
-        //         if(category == undefined) return c.text('Category not found 😒', 404)
-        //         let deleteCategory = await deleteCityService(id,city);
-        //         if(!deleteCategory) {
-        //             return c.json({message: 'Category not deleted'})
-        //         }
-        //             return c.json({msg: deleteCategory})
-        //     }catch (error:any) {
-        //         return c.text("sdfdfd", 500)
-        //     }
-        // }
+export const deleteCity = async (c:Context) => {
+    try {
+        const id = Number(c.req.param("id"))
+        if(isNaN(id)) return c.text('Invalid ID 😒', 400 )
+        const city = await getCityByIdService(id);
+        if(city == undefined) return c.text('City not found 😒', 404)
+        let deleteCity = await deleteCityService(id)
+        return c.text("City deleted successfully 🎉")
+    } catch (error:any) {
+        return c.text(error?.message, 500)
+    }
+}

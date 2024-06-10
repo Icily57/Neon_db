@@ -21,7 +21,7 @@ export const updateCityService = async (id:number, city:TICity) => {
     return "City updated successfully 🎉";
 }
 
-export const deleteCityService = async (id:number, city : TICity) => {
+export const deleteCityService = async (id:number) => {
     await db.delete(cityTable).where(eq(cityTable.id, id))
     return "City deleted successfully 🎉";
 }

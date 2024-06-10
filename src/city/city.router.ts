@@ -1,7 +1,6 @@
 import {Hono} from 'hono'
 
 import { createCity, deleteCity, getAllCities, getCityById, updateCity } from './city.controller'
-import { create } from 'domain'
 
 export const cityRouter = new Hono()
 

@@ -1,4 +1,4 @@
-###
+### //users API
 GET http://localhost:8000/
 
 ###
@@ -205,3 +205,203 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:8000/api/orders/1
+
+### Drivers API
+
+GET http://localhost:8000/api/drivers
+
+###
+GET http://localhost:8000/api/drivers/1
+
+###
+POST http://localhost:8000/api/drivers
+Content-Type: application/json
+
+{
+ "name": "John Doe",
+ "contact_phone": "073534567",
+ "phone_verified": true,
+ "email":{
+    "email_verified": false,
+    "confirmation_code": 3456,
+    "password": "jhgh"
+         }
+}
+
+###
+PUT http://localhost:8000/api/drivers/1
+Content-Type: application/json
+
+{
+    "name": "John Doe"
+}
+
+###
+DELETE http://localhost:8000/api/drivers/1
+
+### comments API
+
+GET http://localhost:8000/api/comments
+
+###
+GET http://localhost:8000/api/comments/1
+
+###
+POST http://localhost:8000/api/comments
+Content-Type: application/json
+
+{
+ "comment": "The food was delicious",
+ "user_id": 2,
+ "restaurant_id": 6
+}
+
+###
+PUT http://localhost:8000/api/comments/1
+Content-Type: application/json
+
+{
+    "comment": "The food was delicious and the service was great"
+}
+
+###
+DELETE http://localhost:8000/api/comments/1
+
+### categories API
+
+GET http://localhost:8000/api/categories
+
+###
+GET http://localhost:8000/api/category/1
+
+###
+
+POST http://localhost:8000/api/category
+Content-Type: application/json
+
+{
+ "name": "Fast Food"
+}
+
+###
+PUT http://localhost:8000/api/category/1
+Content-Type: application/json
+
+{
+    "name": "Fast Food"
+}
+
+###
+
+DELETE http://localhost:8000/api/category/1
+
+### status_catalog API
+
+GET http://localhost:8000/api/status_catalog
+
+###
+GET http://localhost:8000/api/status_catalog/1
+
+###
+POST http://localhost:8000/api/status_catalog
+Content-Type: application/json
+
+{
+ "status": "delivered"
+}
+
+###
+PUT http://localhost:8000/api/status_catalog/1
+Content-Type: application/json
+
+{
+    "status": "delivered"
+}
+
+###
+DELETE http://localhost:8000/api/status_catalog/1
+
+### order_menu_items API
+
+GET http://localhost:8000/api/order_menu_item
+
+###
+GET http://localhost:8000/api/order_menu_item/1
+
+###
+POST http://localhost:8000/api/order_menu_item
+Content-Type: application/json
+
+{
+ "order_id": 1,
+ "menu_item_id": 1,
+ "quantity": 2,
+ "price": 2000
+}
+
+###
+PUT http://localhost:8000/api/order_menu_item/1
+Content-Type: application/json
+
+{
+    "quantity": 3
+}
+
+###
+DELETE http://localhost:8000/api/order_menu_item/1
+
+### menu_items API
+
+GET http://localhost:8000/api/menu_items
+
+###
+GET http://localhost:8000/api/menu_items/1
+
+###
+POST http://localhost:8000/api/menu_items
+Content-Type: application/json
+
+{
+ "name": "Chicken",
+ "price": 2000,
+ "category_id": 1,
+ "restaurant_id": 6
+}
+
+###
+PUT http://localhost:8000/api/menu_items/1
+Content-Type: application/json
+
+{
+    "name": "Chicken"
+}
+
+###
+DELETE http://localhost:8000/api/menu_items/1
+
+### orders_status API
+
+GET http://localhost:8000/api/orders_status
+
+###
+GET http://localhost:8000/api/orders_status/1
+
+###
+POST http://localhost:8000/api/orders_status
+Content-Type: application/json
+
+{
+ "order_id": 1,
+ "status_catalog_id": 1
+}
+
+###
+PUT http://localhost:8000/api/orders_status/1
+Content-Type: application/json
+
+{
+    "status_catalog_id": 1
+}
+
+###
+DELETE http://localhost:8000/api/orders_status/1

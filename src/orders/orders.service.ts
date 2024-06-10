@@ -4,13 +4,11 @@ import { eq } from "drizzle-orm";
 import { ordersTable, TSOrders, TIOrders } from "../drizzle/schema";
 
 export const getAllOrdersService = async ():Promise<TSOrders[] | null>=> {
-    return await db.query.ordersTable.findMany();
+    return await db.select().from(ordersTable);
 }
 
-export const getOrdersByIdService = async (id:number):Promise<TSOrders | undefined> => {
-    return await db.query.ordersTable.findFirst({
-        where:eq(ordersTable.id, id)
-    });
+export const getOrdersByIdService = async (id:TSOrders["id"]):Promise<TSOrders[]> => {
+    return await db.select().from(ordersTable).where(eq(ordersTable.id, id));
 }
 
 export const createOrdersService = async (orders:TIOrders) => {
