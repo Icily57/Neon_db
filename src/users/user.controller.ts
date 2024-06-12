@@ -53,7 +53,8 @@ export const updateUser = async (c:Context) => {
         }
             return c.json({msg: updateUser})
     }catch (error:any) {
-        return c.text("sdfdfd", 500)
+        return c.text(error, 500)
+        console.log(error);
     }
 }
 

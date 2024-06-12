@@ -1,289 +1,237 @@
-### //users API
 GET http://localhost:8000/
 
-###
+### Users API
+#### Get all users
+
 GET http://localhost:8000/api/user
 
-###
+#### Get user by id
+
 GET http://localhost:8000/api/user/1
 
-###
+#### Create user
+
 POST http://localhost:8000/api/user
 Content-Type: application/json
 
 {
-    "name": "Denis",
-    "contact_phone": "073534567",
-    "phone_verified": true,
-    "email": "denis@gmail.com",
-    "email_verified": false,
-    "confirmation_code": 3456,
-    "password": "jhgh"
+    "name": "Kevin Kiprono",
+    "contact_phone": "0712345678",
+    "email": "kip@mail.com",
+    "password":"pulse"
 }
 
-###
-PUT http://localhost:8000/api/user/1
+#### Update user
+
+PUT http://localhost:8000/api/user/5
 Content-Type: application/json
 
 {
-    "name": "John Doe"
+    "contact_phone": "0712345678"
 }
 
-###
-DELETE http://localhost:8000/api/user/3
+#### Delete user
 
-### states API
+DELETE http://localhost:8000/api/user/12
+
+
+### States API
+#### Get all states
+
 GET http://localhost:8000/api/state
 
-###
+#### Get state by id
+
 GET http://localhost:8000/api/state/1
 
-###
+#### Create state
+
 POST http://localhost:8000/api/state
 Content-Type: application/json
 
 {
-    "name": "Chicago",
-    "code": "CH"
+    "name": "Nairobi",
+    "code" : "NRB"
 }
 
-###
+#### Update state
+
 PUT http://localhost:8000/api/state/1
 Content-Type: application/json
 
 {
-    "code" : "NY"
+    "name": "Carlifornia"
 }
 
-###
-DELETE http://localhost:8000/api/state/5
+#### Delete state
 
-### cities API
+DELETE http://localhost:8000/api/state/9
+
+
+
+### City API
+#### Get all cities
 
 GET http://localhost:8000/api/city
 
-###
+#### Get city by id
+
 GET http://localhost:8000/api/city/1
 
-###
+#### Create city
+
 POST http://localhost:8000/api/city
 Content-Type: application/json
 
 {
     "name": "Nairobi",
-    "state_id": 1
+    "state_id" : 1
 }
 
-###
-PUT http://localhost:8000/api/city/4
+#### Update city
+
+PUT http://localhost:8000/api/city/1
 Content-Type: application/json
 
 {
-    "name": "Mombasa raha"
+    "name": "Nairobi City"
 }
 
-###
-DELETE http://localhost:8000/api/city/3
+#### Delete city
+
+DELETE http://localhost:8000/api/city/8
+
+
 
 ### Address API
+#### Get all addresses
 
 GET http://localhost:8000/api/address
 
-###
-GET http://localhost:8000/api/address/5
+#### Get address by id
 
-###
+GET http://localhost:8000/api/address/1
+
+#### Create address
+
 POST http://localhost:8000/api/address
 Content-Type: application/json
 
 {
-   "street_address_1": "1234, 5th Avenue, New York",
-  "street_address_2": "1234, 5th Avenue, New York",
-  "zip_code": "75674df",
-  "delivery_instructions": "Deliver to the car",
-  "user_id": 2,
-  "city_id": 2
+    "street_address_1": "Tom Mboya Street",
+    "street_address_2": "Tom Mboya Street",
+    "zip_code": "00100",
+    "user_id" : 2,
+    "city_id" : 1,
+    "delivery_instructions": "Deliver to the gate"
 }
 
-###
-PUT http://localhost:8000/api/address/5
+#### Update address
+
+PUT http://localhost:8000/api/address/1
 Content-Type: application/json
 
 {
-    "address": "1235, 6th Avenue, Arkansas"
+    "address": "Tom Mboya Street"
 }
 
-###
+#### Delete address
+
 DELETE http://localhost:8000/api/address/13
 
+
+
 ### Restaurant API
+#### Get all restaurants
 
 GET http://localhost:8000/api/restaurant
 
-###
-GET http://localhost:8000/api/restaurant/8
+#### Get restaurant by id
 
-###
+GET http://localhost:8000/api/restaurant/1
+
+#### Create restaurant
+
 POST http://localhost:8000/api/restaurant
 Content-Type: application/json
 
 {
-   "name":"Okra Hotel",
-   "street_address":"1234, 5th Avenue, Arkansas",
-   "zip_code":"87094df",
-   "state":"Arkansas",
-   "city_id":2
+    "name": "Java",
+    "street_address": "123 Main St",
+    "zip_code": "90001",
+    "state":"California",
+    "city_id": 2
 }
 
-###
-PUT http://localhost:8000/api/restaurant/8
+#### Update restaurant
+
+PUT http://localhost:8000/api/restaurant/1
 Content-Type: application/json
 
 {
-    "name": "KFC"
+    "name": "Java House",
 }
 
-###
-DELETE http://localhost:8000/api/restaurant/7
+#### Delete restaurant
 
-### Restaurant_owner API
+DELETE http://localhost:8000/api/restaurant/10
+
+
+
+### Restaurant Owner API
+#### Get all restaurant owners
+
 GET http://localhost:8000/api/restaurant_owner
 
-###
+#### Get restaurant owner by id
+
 GET http://localhost:8000/api/restaurant_owner/1
 
-###
+#### Create restaurant owner
+
 POST http://localhost:8000/api/restaurant_owner
 Content-Type: application/json
 
 {
-  "restaurant_id": 6,
-  "owner_id": 2
+    "user_id": 1,
+    "restaurant_id" : 1
 }
 
-###
-PUT http://localhost:8000/api/restaurant_owner/2
+#### Update restaurant owner
+
+PUT http://localhost:8000/api/restaurant_owner/1
 Content-Type: application/json
 
 {
-    "restaurant_id": 6
+    "user_id": 1
 }
 
-###
-DELETE http://localhost:8000/api/restaurant_owner/1
+#### Delete restaurant owner
+
+DELETE http://localhost:8000/api/restaurant_owner/10
 
 
-### Orders API
 
-GET http://localhost:8000/api/orders
+### category API
+#### Get all categories
 
-###
-GET http://localhost:8000/api/orders/1
+GET http://localhost:8000/api/category
 
-###
-POST http://localhost:8000/api/orders
-Content-Type: application/json
+#### Get category by id
 
-{
- "restaurant_id": 6,
- "estimated_delivery_time": "2021-09-09 12:00:00",
- "actual_delivery_time": "2021-09-09 12:00:00",
- "user_id": 2,
- "driver_id": 1,
- "price": 2000,
- "discount": 200,
- "final_price": 1800,
-}
-
-###
-PUT http://localhost:8000/api/orders/1
-Content-Type: application/json
-
-{
-    "order_status": "delivered"
-}
-
-###
-DELETE http://localhost:8000/api/orders/1
-
-### Drivers API
-
-GET http://localhost:8000/api/drivers
-
-###
-GET http://localhost:8000/api/drivers/1
-
-###
-POST http://localhost:8000/api/drivers
-Content-Type: application/json
-
-{
- "name": "John Doe",
- "contact_phone": "073534567",
- "phone_verified": true,
- "email":{
-    "email_verified": false,
-    "confirmation_code": 3456,
-    "password": "jhgh"
-         }
-}
-
-###
-PUT http://localhost:8000/api/drivers/1
-Content-Type: application/json
-
-{
-    "name": "John Doe"
-}
-
-###
-DELETE http://localhost:8000/api/drivers/1
-
-### comments API
-
-GET http://localhost:8000/api/comments
-
-###
-GET http://localhost:8000/api/comments/1
-
-###
-POST http://localhost:8000/api/comments
-Content-Type: application/json
-
-{
- "comment": "The food was delicious",
- "user_id": 2,
- "restaurant_id": 6
-}
-
-###
-PUT http://localhost:8000/api/comments/1
-Content-Type: application/json
-
-{
-    "comment": "The food was delicious and the service was great"
-}
-
-###
-DELETE http://localhost:8000/api/comments/1
-
-### categories API
-
-GET http://localhost:8000/api/categories
-
-###
 GET http://localhost:8000/api/category/1
 
-###
+#### Create category
 
 POST http://localhost:8000/api/category
 Content-Type: application/json
 
 {
- "name": "Fast Food"
+    "name": "Fast Food"
 }
 
-###
+#### Update category
+
 PUT http://localhost:8000/api/category/1
 Content-Type: application/json
 
@@ -291,55 +239,106 @@ Content-Type: application/json
     "name": "Fast Food"
 }
 
-###
+#### Delete category
 
-DELETE http://localhost:8000/api/category/1
+DELETE http://localhost:8000/api/category/10
 
-### status_catalog API
 
-GET http://localhost:8000/api/status_catalog
 
-###
-GET http://localhost:8000/api/status_catalog/1
+### Menu Items API
+#### Get all menu items
 
-###
-POST http://localhost:8000/api/status_catalog
+GET http://localhost:8000/api/menu_items
+
+#### Get menu item by id
+
+GET http://localhost:8000/api/menu_items/1
+
+#### Create menu item
+
+POST http://localhost:8000/api/menu_items
 Content-Type: application/json
 
 {
- "status": "delivered"
+    "name": "Chicken Burger",
+    "price": 500,
+    "category_id": 1,
+    "restaurant_id": 1
 }
 
-###
-PUT http://localhost:8000/api/status_catalog/1
+#### Update menu item
+
+PUT http://localhost:8000/api/menu_items/1
 Content-Type: application/json
 
 {
-    "status": "delivered"
+    "name": "Chicken Burger"
 }
 
-###
-DELETE http://localhost:8000/api/status_catalog/1
+#### Delete menu item
 
-### order_menu_items API
+DELETE http://localhost:8000/api/menu_items/10
+
+Authorization:""
+
+### Orders API
+#### Get all orders
+
+GET http://localhost:8000/api/orders
+
+#### Get order by id
+
+GET http://localhost:8000/api/orders/1
+
+#### Create order
+
+POST http://localhost:8000/api/orders
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "restaurant_id": 1,
+    "total_price": 500,
+    "status": "pending"
+}
+
+#### Update order
+
+PUT http://localhost:8000/api/orders/1
+Content-Type: application/json
+
+{
+    "status": "completed"
+}
+
+#### Delete order
+
+DELETE http://localhost:8000/api/orders/10
+
+
+
+### Order Menu Item API
+#### Get all order menu items
 
 GET http://localhost:8000/api/order_menu_item
 
-###
+#### Get order menu item by id
+
 GET http://localhost:8000/api/order_menu_item/1
 
-###
+#### Create order menu item
+
 POST http://localhost:8000/api/order_menu_item
 Content-Type: application/json
 
 {
- "order_id": 1,
- "menu_item_id": 1,
- "quantity": 2,
- "price": 2000
+    "order_id": 1,
+    "menu_item_id": 1,
+    "quantity": 2
 }
 
-###
+#### Update order menu item
+
 PUT http://localhost:8000/api/order_menu_item/1
 Content-Type: application/json
 
@@ -347,61 +346,198 @@ Content-Type: application/json
     "quantity": 3
 }
 
-###
-DELETE http://localhost:8000/api/order_menu_item/1
+#### Delete order menu item
 
-### menu_items API
+DELETE http://localhost:8000/api/order_menu_item/10
 
-GET http://localhost:8000/api/menu_items
 
-###
-GET http://localhost:8000/api/menu_items/1
+### Drivers API
+#### Get all drivers
 
-###
-POST http://localhost:8000/api/menu_items
+GET http://localhost:8000/api/drivers
+
+#### Get driver by id
+
+GET http://localhost:8000/api/drivers/1
+
+#### Create driver
+
+POST http://localhost:8000/api/drivers
 Content-Type: application/json
 
 {
- "name": "Chicken",
- "price": 2000,
- "category_id": 1,
- "restaurant_id": 6
+    "car_make": "Toyota",
+    "car_model": "Vitz",
+    "car_year": 2010,
+    "user_id": 1,
+    "online": true,
+    "delivering": false
 }
 
-###
-PUT http://localhost:8000/api/menu_items/1
+#### Update driver
+
+PUT http://localhost:8000/api/drivers/1
 Content-Type: application/json
 
 {
-    "name": "Chicken"
+    "online": false
 }
 
-###
-DELETE http://localhost:8000/api/menu_items/1
+#### Delete driver
 
-### orders_status API
+DELETE http://localhost:8000/api/drivers/10
+
+
+### Orders Status API
+#### Get all orders status
 
 GET http://localhost:8000/api/orders_status
 
-###
+#### Get order status by id
+
 GET http://localhost:8000/api/orders_status/1
 
-###
+#### Create order status
+
 POST http://localhost:8000/api/orders_status
 Content-Type: application/json
 
 {
- "order_id": 1,
- "status_catalog_id": 1
+    "order_id": 1,
+    "status": "pending"
 }
 
-###
+#### Update order status
+
 PUT http://localhost:8000/api/orders_status/1
 Content-Type: application/json
 
 {
-    "status_catalog_id": 1
+    "status": "completed",
 }
 
-###
-DELETE http://localhost:8000/api/orders_status/1
+#### Delete order status
+
+DELETE http://localhost:8000/api/orders_status/10
+
+
+
+### status catalog API
+#### Get all status catalog
+
+GET http://localhost:8000/api/status_catalog
+
+#### Get status catalog by id
+
+GET http://localhost:8000/api/status_catalog/1
+
+#### Create status catalog
+
+POST http://localhost:8000/api/status_catalog
+Content-Type: application/json
+
+{
+    "name": "pending"
+}
+
+#### Update status catalog
+
+PUT http://localhost:8000/api/status_catalog/1
+Content-Type: application/json
+
+{
+    "name": "completed"
+}
+
+#### Delete status catalog  
+
+DELETE http://localhost:8000/api/status_catalog/10
+
+
+
+### Comments API
+#### Get all comments
+
+GET http://localhost:8000/api/comments
+
+#### Get comment by id
+
+GET http://localhost:8000/api/comments/1
+
+#### Create comment
+
+POST http://localhost:8000/api/comments
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "restaurant_id": 1,
+    "comment": "The food was great"
+}
+
+#### Update comment
+
+PUT http://localhost:8000/api/comments/1
+Content-Type: application/json
+
+{
+    "comment": "The food was amazing"
+}
+
+#### Delete comment 
+
+DELETE http://localhost:8000/api/comments/1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
